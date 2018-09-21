@@ -11,19 +11,15 @@ image:
 preJob:
   preConfig:
     configFile: application.yml
-    mysql:
-      host: 192.168.12.175
-      port: 3306
-      database: manager_service
-      username: root
-      password: choerodon
+    datasource:
+      url: jdbc:mysql://localhost:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: choerodon
+      password: 123456
   preInitDB:
-    mysql:
-      host: 192.168.12.175
-      port: 3306
-      database: demo_service
-      username: root
-      password: choerodon
+    datasource:
+      url: jdbc:mysql://localhost:3306/demo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: choerodon
+      password: 123456
 
 deployment:
   managementPort: 18081
@@ -36,9 +32,9 @@ env:
     SPRING_CLOUD_CONFIG_ENABLED: true
     SPRING_CLOUD_CONFIG_URI: http://config-server.framework:8010/
     ## mysql
-    SPRING_DATASOURCE_URL: jdbc:mysql://localhost/demo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    SPRING_DATASOURCE_USERNAME: root
-    SPRING_DATASOURCE_PASSWORD: choerodon
+    SPRING_DATASOURCE_URL: jdbc:mysql://localhost::3306/demo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    SPRING_DATASOURCE_USERNAME: choerodon
+    SPRING_DATASOURCE_PASSWORD: 123456
     ## kafka
     CHOERODON_EVENT_CONSUMER_KAFKA_BOOTSTRAP_SERVERS: kafka-0.kafka-headless.kafka.svc.cluster.local:9092,kafka-1.kafka-headless.kafka.svc.cluster.local:9092,kafka-2.kafka-headless.kafka.svc.cluster.local:9092
     SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: kafka-0.kafka-headless.kafka.svc.cluster.local:9092,kafka-1.kafka-headless.kafka.svc.cluster.local:9092,kafka-2.kafka-headless.kafka.svc.cluster.local:9092

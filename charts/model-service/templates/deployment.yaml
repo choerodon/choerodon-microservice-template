@@ -34,10 +34,8 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           readinessProbe:
-            httpGet:
-              path: /health
-              port: {{ .Values.deployment.managementPort }}
-              scheme: HTTP
+            exec:
+              command: ["/bin/sh","-c","curl -s localhost:{{ .Values.deployment.managementPort }}/health --fail && nc -z localhost {{ .Values.service.port }}"]
             failureThreshold: 3
             initialDelaySeconds: 60
             periodSeconds: 10

@@ -26,15 +26,7 @@ spring:
         binder:
           brokers: 127.0.0.1:9092
           zkNodes: 127.0.0.1:2181
-event:
-  store:
-    service:
-      name: event-store-service
 choerodon:
-  ldap:
-    userNameType: 0
-  devops:
-    message: true
   event:
     consumer:
       enabled: true # 是否开启，不设置默认开启
@@ -69,10 +61,6 @@ hystrix:
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
-file-service:
-  ribbon:
-    ReadTimeout: 15000
-    ConnectTimeout: 15000
 mybatis:
   mapperLocations: classpath*:/mapper/*.xml
   configuration: # 数据库下划线转驼峰配置

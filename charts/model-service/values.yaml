@@ -10,12 +10,14 @@ image:
 
 preJob:
   preConfig:
+    enable: true
     configFile: application.yml
     datasource:
       url: jdbc:mysql://localhost:3306/manager_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: choerodon
       password: 123456
   preInitDB:
+    enable: true
     datasource:
       url: jdbc:mysql://localhost:3306/demo_service?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: choerodon

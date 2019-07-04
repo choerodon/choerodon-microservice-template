@@ -13,9 +13,11 @@ spring:
       uri: localhost:8010
       enabled: false
 management:
-  port: 18081
-  security:
-    enabled: false
-security:
-  basic:
-    enabled: false
+  server:
+    port: 18081
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    health:
+      show-details: "ALWAYS"

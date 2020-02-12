@@ -15,7 +15,7 @@ preJob:
   # job超时时间
   timeout: 300
   # job镜像库地址
-  image: registry.cn-shanghai.aliyuncs.com/c7n/dbtool:0.6.4
+  image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/dbtool:0.6.7
   preConfig:
     # 是否初始化manager_service数据库
     enabled: true

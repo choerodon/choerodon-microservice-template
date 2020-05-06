@@ -18,6 +18,7 @@
     <!--choerodon-starters dependency-->
     <properties>
         <choerodon.starters.version>0.12.0.RELEASE</choerodon.starters.version>
+        <choerodon.mainClass>io.choerodon.demo.DemoServiceApplication</choerodon.mainClass>
     </properties>
     <dependencies>
         <!--spring boot-->
